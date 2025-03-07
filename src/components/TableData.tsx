@@ -2,9 +2,10 @@
 
 import React from "react";
 import { Table, Tag, Space } from "antd";
+import {Orders} from "@/types";
 
 export const TableData = () => {
-  const orders = [
+  const orders: Orders[] = [
     {
       orderId: "ORD-001",
       customerName: "John Doe",
