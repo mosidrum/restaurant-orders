@@ -2,7 +2,8 @@
 
 import React from "react";
 import { Table, Tag, Space } from "antd";
-import {Orders} from "@/types";
+import { Orders } from "@/types";
+import { DropDown } from "@/components/DropDown";
 
 export const TableData = () => {
   const orders: Orders[] = [
@@ -31,7 +32,7 @@ export const TableData = () => {
       timestamp: "2025-03-05 16:45:10",
     },
   ];
-
+  
   const columns = [
     {
       title: "Order ID",
@@ -93,9 +94,13 @@ export const TableData = () => {
       ),
     },
   ];
-
+  
   return (
-    <div className="flex justify-center p-4">
+    <div className="flex flex-col items-center p-4">
+      <div className="w-full max-w-7xl flex justify-end mb-4">
+        <DropDown />
+      </div>
+      
       <div className="w-full max-w-7xl">
         <Table
           columns={columns}
