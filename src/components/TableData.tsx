@@ -3,34 +3,10 @@
 import React, { useState } from "react";
 import { Table, Tag, Space, Select } from "antd";
 import { Orders } from "@/types";
+import { orders } from "@/utils";
 
 export const TableData = () => {
-  const orders: Orders[] = [
-    {
-      orderId: "ORD-001",
-      customerName: "John Doe",
-      items: ["Laptop", "Mouse", "Keyboard"],
-      totalPrice: 1299.99,
-      status: "Completed",
-      timestamp: "2025-03-06 14:30:22",
-    },
-    {
-      orderId: "ORD-002",
-      customerName: "Jane Smith",
-      items: ["Monitor", "Headphones"],
-      totalPrice: 549.95,
-      status: "Pending",
-      timestamp: "2025-03-07 09:15:43",
-    },
-    {
-      orderId: "ORD-003",
-      customerName: "Robert Johnson",
-      items: ["Smartphone", "Phone Case", "Screen Protector"],
-      totalPrice: 899.5,
-      status: "Completed",
-      timestamp: "2025-03-05 16:45:10",
-    },
-  ];
+  const [ordersData, setOrdersData] = useState<Orders[]>(orders);
 
   const [statusFilter, setStatusFilter] = useState<string | null>(null);
   const [sortOption, setSortOption] = useState<string | null>(null);
@@ -43,10 +19,20 @@ export const TableData = () => {
     setSortOption(value);
   };
 
+  const handleUpdateStatus = (orderId: string) => {
+    setOrdersData((prevOrders) =>
+      prevOrders.map((order) =>
+        order.orderId === orderId && order.status === "Pending"
+          ? { ...order, status: "Completed" }
+          : order
+      )
+    );
+  };
+
   const filteredData =
     statusFilter && statusFilter !== "All"
-      ? orders.filter((order) => order.status === statusFilter)
-      : orders;
+      ? ordersData.filter((order) => order.status === statusFilter)
+      : ordersData;
 
   const sortedData = [...filteredData];
   if (sortOption === "date_asc") {
@@ -105,19 +91,14 @@ export const TableData = () => {
       render: (status: "Pending" | "Completed", record: Orders) => (
         <Space>
           <Tag color={status === "Completed" ? "green" : "gold"}>{status}</Tag>
-          <Tag
-            color={status === "Completed" ? "gold" : "green"}
-            onClick={() => {
-              console.log(
-                `Changing status of ${record.orderId} to ${
-                  status === "Completed" ? "Pending" : "Completed"
-                }`
-              );
-            }}
-            className="hover:cursor-pointer"
-          >
-            Mark {status === "Completed" ? "Pending" : "Completed"}
-          </Tag>
+          {status === "Pending" && (
+            <button
+              className="border border-green-500 rounded-sm py-[2px] px-2 text-[11px] text-green-500 hover:bg-green-100"
+              onClick={() => handleUpdateStatus(record.orderId)}
+            >
+              Complete Order
+            </button>
+          )}
         </Space>
       ),
     },
