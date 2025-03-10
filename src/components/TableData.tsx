@@ -1,16 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { Table, Tag, Space, Select, Button } from "antd";
+import { Table, Tag, Space, Select } from "antd";
 import { Orders } from "@/types";
-import { DropDown } from "@/components/DropDown";
-import {
-  SortAscendingOutlined,
-  SortDescendingOutlined,
-} from "@ant-design/icons";
 
 export const TableData = () => {
-  const initialOrders: Orders[] = [
+  const orders: Orders[] = [
     {
       orderId: "ORD-001",
       customerName: "John Doe",
@@ -37,54 +32,38 @@ export const TableData = () => {
     },
   ];
 
-  const [orders, setOrders] = useState(initialOrders);
   const [statusFilter, setStatusFilter] = useState<string | null>(null);
-  const [sortField, setSortField] = useState<string | null>(null);
-  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
+  const [sortOption, setSortOption] = useState<string | null>(null);
 
-  const handleStatusFilter = (value: string) => {
+  const handleStatusChange = (value: string) => {
     setStatusFilter(value);
-    filterAndSortOrders(value, sortField, sortDirection);
   };
 
-  const handleSort = (field: string) => {
-    const newDirection =
-      field === sortField && sortDirection === "asc" ? "desc" : "asc";
-    setSortField(field);
-    setSortDirection(newDirection);
-    filterAndSortOrders(statusFilter, field, newDirection);
+  const handleSortChange = (value: string) => {
+    setSortOption(value);
   };
 
-  const filterAndSortOrders = (
-    status: string | null,
-    field: string | null,
-    direction: "asc" | "desc"
-  ) => {
-    let filteredOrders = [...initialOrders];
+  const filteredData =
+    statusFilter && statusFilter !== "All"
+      ? orders.filter((order) => order.status === statusFilter)
+      : orders;
 
-    if (status && status !== "All") {
-      filteredOrders = filteredOrders.filter(
-        (order) => order.status === status
-      );
-    }
-
-    if (field) {
-      filteredOrders.sort((a, b) => {
-        let comparison = 0;
-
-        if (field === "timestamp") {
-          comparison =
-            new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime();
-        } else if (field === "totalPrice") {
-          comparison = a.totalPrice - b.totalPrice;
-        }
-
-        return direction === "asc" ? comparison : -comparison;
-      });
-    }
-
-    setOrders(filteredOrders);
-  };
+  const sortedData = [...filteredData];
+  if (sortOption === "date_asc") {
+    sortedData.sort(
+      (a, b) =>
+        new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()
+    );
+  } else if (sortOption === "date_desc") {
+    sortedData.sort(
+      (a, b) =>
+        new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+    );
+  } else if (sortOption === "price_asc") {
+    sortedData.sort((a, b) => a.totalPrice - b.totalPrice);
+  } else if (sortOption === "price_desc") {
+    sortedData.sort((a, b) => b.totalPrice - a.totalPrice);
+  }
 
   const columns = [
     {
@@ -106,34 +85,15 @@ export const TableData = () => {
       render: (items: string[]) => (
         <div className="flex flex-row gap-1">
           {items.map((item) => (
-            <button
-              key={item}
-              className="mb-1 text-red-500 border p-1 rounded-md"
-            >
+            <Tag key={item} className="mb-1 text-red-500 border p-1 rounded-md">
               {item}
-            </button>
+            </Tag>
           ))}
         </div>
       ),
     },
     {
-      title: (
-        <div className="flex items-center justify-between">
-          <span>Total Price</span>
-          <Button
-            type="text"
-            onClick={() => handleSort("totalPrice")}
-            icon={
-              sortField === "totalPrice" && sortDirection === "asc" ? (
-                <SortAscendingOutlined />
-              ) : (
-                <SortDescendingOutlined />
-              )
-            }
-            size="small"
-          />
-        </div>
-      ),
+      title: "Total Price",
       dataIndex: "totalPrice",
       key: "totalPrice",
       render: (price: number) => `$${price.toFixed(2)}`,
@@ -142,28 +102,27 @@ export const TableData = () => {
       title: "Status",
       dataIndex: "status",
       key: "status",
-      render: (status: "Pending" | "Completed") => (
-        <Tag color={status === "Completed" ? "green" : "gold"}>{status}</Tag>
+      render: (status: "Pending" | "Completed", record: Orders) => (
+        <Space>
+          <Tag color={status === "Completed" ? "green" : "gold"}>{status}</Tag>
+          <Tag
+            color={status === "Completed" ? "gold" : "green"}
+            onClick={() => {
+              console.log(
+                `Changing status of ${record.orderId} to ${
+                  status === "Completed" ? "Pending" : "Completed"
+                }`
+              );
+            }}
+            className="hover:cursor-pointer"
+          >
+            Mark {status === "Completed" ? "Pending" : "Completed"}
+          </Tag>
+        </Space>
       ),
     },
     {
-      title: (
-        <div className="flex items-center justify-between">
-          <span>Order Timestamp</span>
-          <Button
-            type="text"
-            onClick={() => handleSort("timestamp")}
-            icon={
-              sortField === "timestamp" && sortDirection === "asc" ? (
-                <SortAscendingOutlined />
-              ) : (
-                <SortDescendingOutlined />
-              )
-            }
-            size="small"
-          />
-        </div>
-      ),
+      title: "Order Timestamp",
       dataIndex: "timestamp",
       key: "timestamp",
       className: "hidden md:table-cell",
@@ -183,25 +142,34 @@ export const TableData = () => {
   return (
     <div className="flex flex-col items-center p-4">
       <div className="w-full max-w-7xl flex justify-between mb-4">
-        <div>
-          <Select
-            placeholder="Filter by Status"
-            style={{ width: 150 }}
-            onChange={handleStatusFilter}
-            options={[
-              { value: "All", label: "All" },
-              { value: "Pending", label: "Pending" },
-              { value: "Completed", label: "Completed" },
-            ]}
-          />
-        </div>
-        <DropDown />
+        <Select
+          placeholder="Filter by Status"
+          style={{ width: 150 }}
+          onChange={handleStatusChange}
+          options={[
+            { value: "All", label: "All" },
+            { value: "Pending", label: "Pending" },
+            { value: "Completed", label: "Completed" },
+          ]}
+        />
+
+        <Select
+          placeholder="Sort by"
+          style={{ width: 150 }}
+          onChange={handleSortChange}
+          options={[
+            { value: "date_asc", label: "Date (Oldest first)" },
+            { value: "date_desc", label: "Date (Newest first)" },
+            { value: "price_asc", label: "Price (Low to High)" },
+            { value: "price_desc", label: "Price (High to Low)" },
+          ]}
+        />
       </div>
 
       <div className="w-full max-w-7xl">
         <Table
           columns={columns}
-          dataSource={orders}
+          dataSource={sortedData}
           rowKey="orderId"
           className="w-full"
         />

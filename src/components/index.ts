@@ -1,2 +1,1 @@
-export * from './TableData';
-export * from './DropDown';
+export * from "./TableData";
