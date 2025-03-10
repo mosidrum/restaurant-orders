@@ -8,17 +8,16 @@ import { PaginationControls } from "./Pagination";
 
 export const TableData = () => {
   const [ordersData, setOrdersData] = useState<Orders[]>([]);
-  const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [pageSize] = useState(10);
   const [totalOrders] = useState(100);
 
-  useEffect(() => {
-    setLoading(true);
-    fetchOrders(page, pageSize)
-      .then((newOrders) => setOrdersData(newOrders))
-      .finally(() => setLoading(false));
-  }, [page, pageSize]);
+  // useEffect(() => {
+  //   setLoading(true);
+  //   fetchOrders(page, pageSize)
+  //     .then((newOrders) => setOrdersData(newOrders))
+  //     .finally(() => setLoading(false));
+  // }, [page, pageSize]);
 
   const handleUpdateStatus = (orderId: string) => {
     setOrdersData((prevOrders) =>
@@ -33,11 +32,10 @@ export const TableData = () => {
   const memoizedProps = useMemo(
     () => ({
       ordersData,
-      loading,
       pageSize,
       onUpdateStatus: handleUpdateStatus,
     }),
-    [ordersData, loading, pageSize]
+    [ordersData, pageSize]
   );
 
   return (

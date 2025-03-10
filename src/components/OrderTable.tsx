@@ -2,46 +2,44 @@ import { Breakpoint, Table, Tag } from "antd";
 import { Orders } from "@/types";
 import { OrderStatus } from "./OrderStatus";
 import { TableSkeleton } from "./TableSkeleton";
-import { useState } from "react";
+import { useState, useMemo } from "react";
+import { useOrders } from "@/hooks/useOrders";
 
 interface OrderTableProps {
-  ordersData: Orders[];
-  loading: boolean;
   pageSize: number;
   onUpdateStatus: (orderId: string) => void;
 }
 
 export const OrderTable: React.FC<OrderTableProps> = ({
-  ordersData,
-  loading,
   pageSize,
   onUpdateStatus,
 }) => {
   const [selectedStatus, setSelectedStatus] = useState("All");
-  const [selectedSort, setSelectedSort] = useState("");
+  const [selectedSort, setSelectedSort] = useState<
+    "totalPrice" | "timestamp" | ""
+  >("");
 
-  const handleStatusChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedStatus(event.target.value);
-  };
+  const { orders, loading } = useOrders();
 
-  const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedSort(event.target.value);
-  };
+  const filteredOrders = useMemo(() => {
+    return selectedStatus === "All"
+      ? orders
+      : orders.filter((order) => order.status === selectedStatus);
+  }, [orders, selectedStatus]);
 
-  const filteredOrders = ordersData.filter((order) => {
-    if (selectedStatus === "All") return true;
-    return order.status === selectedStatus;
-  });
-
-  const sortedOrders = [...filteredOrders].sort((a, b) => {
-    if (selectedSort === "totalPrice") {
-      return b.totalPrice - a.totalPrice;
-    }
-    if (selectedSort === "timestamp") {
-      return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
-    }
-    return 0;
-  });
+  const sortedOrders = useMemo(() => {
+    return [...filteredOrders].sort((a, b) => {
+      if (selectedSort === "totalPrice") {
+        return b.totalPrice - a.totalPrice;
+      }
+      if (selectedSort === "timestamp") {
+        return (
+          new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+        );
+      }
+      return 0;
+    });
+  }, [filteredOrders, selectedSort]);
 
   const columns = [
     {
@@ -61,8 +59,11 @@ export const OrderTable: React.FC<OrderTableProps> = ({
       responsive: ["md" as Breakpoint],
       render: (items: string[]) => (
         <div className="flex flex-row gap-1">
-          {items.map((item) => (
-            <Tag key={item} className="mb-1 text-red-500 border p-1 rounded-md">
+          {items.map((item, index) => (
+            <Tag
+              key={index}
+              className="mb-1 text-red-500 border p-1 rounded-md"
+            >
               {item}
             </Tag>
           ))}
@@ -74,7 +75,6 @@ export const OrderTable: React.FC<OrderTableProps> = ({
       dataIndex: "totalPrice",
       key: "totalPrice",
       responsive: ["sm" as Breakpoint],
-      render: (price: number) => `$${price.toFixed(2)}`,
     },
     {
       title: "Status",
@@ -113,7 +113,7 @@ export const OrderTable: React.FC<OrderTableProps> = ({
         <select
           className="border rounded px-3 py-1"
           value={selectedStatus}
-          onChange={handleStatusChange}
+          onChange={(e) => setSelectedStatus(e.target.value)}
         >
           <option value="All">All</option>
           <option value="Pending">Pending</option>
@@ -123,7 +123,9 @@ export const OrderTable: React.FC<OrderTableProps> = ({
         <select
           className="border rounded px-3 py-1"
           value={selectedSort}
-          onChange={handleSortChange}
+          onChange={(e) =>
+            setSelectedSort(e.target.value as "totalPrice" | "timestamp")
+          }
         >
           <option value="">Sort By</option>
           <option value="totalPrice">Total Price</option>
