@@ -1,64 +1,62 @@
 [
   {
-    "orderId": "ORD-8726727",
-    "customerName": "Ava Dejesus",
-    "items": ["Injera & Doro Wat"],
-    "totalPrice": 978,
-    "status": "Completed",
-    "timestamp": "2024-03-02T16:13:26.000Z"
-  },
-  {
-    "orderId": "ORD-2687010",
-    "customerName": "Phelps Hinton",
-    "items": ["Couscous & Tagine", "Malewa"],
-    "totalPrice": 226,
-    "status": "Completed",
-    "timestamp": "2024-05-03T13:49:34.000Z"
-  },
-  {
     "orderId": "ORD-4080301",
     "customerName": "Elaine Jordan",
-    "items": ["Moambe Chicken"],
+    "items": [
+      "Moambe Chicken"
+    ],
     "totalPrice": 865,
-    "status": "Pending",
+    "status": "Completed",
     "timestamp": "2022-03-11T09:06:13.000Z"
   },
   {
     "orderId": "ORD-2022642",
     "customerName": "Valdez Rivas",
-    "items": ["Eba & Ogbono Soup"],
+    "items": [
+      "Eba & Ogbono Soup"
+    ],
     "totalPrice": 780,
-    "status": "Pending",
+    "status": "Completed",
     "timestamp": "2025-04-05T17:58:52.000Z"
   },
   {
     "orderId": "ORD-4676171",
     "customerName": "Concepcion Hutchinson",
-    "items": ["Bobotie", "Boerewors"],
+    "items": [
+      "Bobotie",
+      "Boerewors"
+    ],
     "totalPrice": 64,
-    "status": "Pending",
+    "status": "Completed",
     "timestamp": "2025-12-16T10:36:59.000Z"
   },
   {
     "orderId": "ORD-507750",
     "customerName": "Macias Schultz",
-    "items": ["Sadza & Nyama", "Zanzibar Biryani"],
+    "items": [
+      "Sadza & Nyama",
+      "Zanzibar Biryani"
+    ],
     "totalPrice": 82,
-    "status": "Pending",
+    "status": "Completed",
     "timestamp": "2022-03-28T21:20:23.000Z"
   },
   {
     "orderId": "ORD-3618665",
     "customerName": "Margaret Hartman",
-    "items": ["Chapati & Sukuma Wiki"],
+    "items": [
+      "Chapati & Sukuma Wiki"
+    ],
     "totalPrice": 804,
-    "status": "Pending",
+    "status": "Completed",
     "timestamp": "2022-12-22T10:14:43.000Z"
   },
   {
     "orderId": "ORD-7992241",
     "customerName": "Dawn Alvarez",
-    "items": ["Akara"],
+    "items": [
+      "Akara"
+    ],
     "totalPrice": 184,
     "status": "Completed",
     "timestamp": "2023-06-13T08:09:09.000Z"
@@ -66,7 +64,10 @@
   {
     "orderId": "ORD-404116",
     "customerName": "Bernard Landry",
-    "items": ["Eba & Ogbono Soup", "Jollof Rice"],
+    "items": [
+      "Eba & Ogbono Soup",
+      "Jollof Rice"
+    ],
     "totalPrice": 518,
     "status": "Pending",
     "timestamp": "2022-01-02T23:58:20.000Z"
@@ -74,7 +75,10 @@
   {
     "orderId": "ORD-6460599",
     "customerName": "Morales Tyson",
-    "items": ["Boerewors", "Zanzibar Biryani"],
+    "items": [
+      "Boerewors",
+      "Zanzibar Biryani"
+    ],
     "totalPrice": 635,
     "status": "Completed",
     "timestamp": "2024-03-25T02:45:09.000Z"
@@ -82,7 +86,9 @@
   {
     "orderId": "ORD-5903070",
     "customerName": "Mays Frost",
-    "items": ["Bastilla"],
+    "items": [
+      "Bastilla"
+    ],
     "totalPrice": 904,
     "status": "Completed",
     "timestamp": "2020-02-16T06:18:24.000Z"
@@ -90,7 +96,9 @@
   {
     "orderId": "ORD-6494197",
     "customerName": "Charlene Oneal",
-    "items": ["Kwanga"],
+    "items": [
+      "Kwanga"
+    ],
     "totalPrice": 126,
     "status": "Pending",
     "timestamp": "2020-09-03T12:47:36.000Z"
@@ -98,7 +106,10 @@
   {
     "orderId": "ORD-9219656",
     "customerName": "Dillon Austin",
-    "items": ["Suya", "Fumbwa"],
+    "items": [
+      "Suya",
+      "Fumbwa"
+    ],
     "totalPrice": 151,
     "status": "Pending",
     "timestamp": "2022-09-15T19:59:24.000Z"
@@ -106,7 +117,10 @@
   {
     "orderId": "ORD-3855718",
     "customerName": "Esperanza Powell",
-    "items": ["Mandazi", "Moambe Chicken"],
+    "items": [
+      "Mandazi",
+      "Moambe Chicken"
+    ],
     "totalPrice": 210,
     "status": "Completed",
     "timestamp": "2022-10-03T02:35:43.000Z"
@@ -114,7 +128,9 @@
   {
     "orderId": "ORD-7385803",
     "customerName": "Gay Avila",
-    "items": ["Bobotie"],
+    "items": [
+      "Bobotie"
+    ],
     "totalPrice": 265,
     "status": "Pending",
     "timestamp": "2024-05-09T19:45:06.000Z"
@@ -122,7 +138,9 @@
   {
     "orderId": "ORD-7604787",
     "customerName": "Bullock Patton",
-    "items": ["Fufu & Light Soup"],
+    "items": [
+      "Fufu & Light Soup"
+    ],
     "totalPrice": 966,
     "status": "Completed",
     "timestamp": "2022-09-07T07:48:58.000Z"
@@ -130,7 +148,9 @@
   {
     "orderId": "ORD-6217515",
     "customerName": "Ella Weiss",
-    "items": ["Vetkoek"],
+    "items": [
+      "Vetkoek"
+    ],
     "totalPrice": 929,
     "status": "Completed",
     "timestamp": "2022-12-08T18:54:30.000Z"
@@ -138,7 +158,9 @@
   {
     "orderId": "ORD-4395869",
     "customerName": "Morris Christian",
-    "items": ["Boerewors"],
+    "items": [
+      "Boerewors"
+    ],
     "totalPrice": 30,
     "status": "Completed",
     "timestamp": "2023-09-28T02:56:34.000Z"
@@ -146,7 +168,10 @@
   {
     "orderId": "ORD-8418794",
     "customerName": "Rosa Mcneil",
-    "items": ["Bastilla", "Eba & Ogbono Soup"],
+    "items": [
+      "Bastilla",
+      "Eba & Ogbono Soup"
+    ],
     "totalPrice": 581,
     "status": "Pending",
     "timestamp": "2024-01-09T22:35:26.000Z"
@@ -154,7 +179,9 @@
   {
     "orderId": "ORD-7246782",
     "customerName": "Hall Mcleod",
-    "items": ["Bunny Chow"],
+    "items": [
+      "Bunny Chow"
+    ],
     "totalPrice": 569,
     "status": "Completed",
     "timestamp": "2025-05-27T19:08:41.000Z"
@@ -162,7 +189,9 @@
   {
     "orderId": "ORD-5098461",
     "customerName": "Medina Bates",
-    "items": ["Ful Medames"],
+    "items": [
+      "Ful Medames"
+    ],
     "totalPrice": 99,
     "status": "Completed",
     "timestamp": "2022-11-01T17:55:18.000Z"
@@ -170,7 +199,10 @@
   {
     "orderId": "ORD-6310757",
     "customerName": "Stewart Wade",
-    "items": ["Harira Soup", "Zanzibar Biryani"],
+    "items": [
+      "Harira Soup",
+      "Zanzibar Biryani"
+    ],
     "totalPrice": 504,
     "status": "Pending",
     "timestamp": "2023-12-28T09:59:53.000Z"
@@ -178,7 +210,10 @@
   {
     "orderId": "ORD-7158992",
     "customerName": "Raquel England",
-    "items": ["Brik", "Brik"],
+    "items": [
+      "Brik",
+      "Brik"
+    ],
     "totalPrice": 508,
     "status": "Pending",
     "timestamp": "2023-01-01T22:07:12.000Z"
@@ -186,7 +221,9 @@
   {
     "orderId": "ORD-5373771",
     "customerName": "Carmela Mcclure",
-    "items": ["Chapati & Sukuma Wiki"],
+    "items": [
+      "Chapati & Sukuma Wiki"
+    ],
     "totalPrice": 310,
     "status": "Pending",
     "timestamp": "2025-06-20T01:48:12.000Z"
@@ -194,7 +231,10 @@
   {
     "orderId": "ORD-895582",
     "customerName": "Theresa Mcknight",
-    "items": ["Boerewors", "Mahjouba"],
+    "items": [
+      "Boerewors",
+      "Mahjouba"
+    ],
     "totalPrice": 508,
     "status": "Completed",
     "timestamp": "2024-06-11T04:24:36.000Z"
@@ -202,7 +242,9 @@
   {
     "orderId": "ORD-4186365",
     "customerName": "Oneill Bowers",
-    "items": ["Waakye"],
+    "items": [
+      "Waakye"
+    ],
     "totalPrice": 188,
     "status": "Pending",
     "timestamp": "2021-07-05T15:41:45.000Z"
@@ -210,7 +252,10 @@
   {
     "orderId": "ORD-7225128",
     "customerName": "Minerva Norman",
-    "items": ["Harira Soup", "Koshari"],
+    "items": [
+      "Harira Soup",
+      "Koshari"
+    ],
     "totalPrice": 882,
     "status": "Pending",
     "timestamp": "2022-10-19T02:07:37.000Z"
@@ -218,7 +263,9 @@
   {
     "orderId": "ORD-3732420",
     "customerName": "Ball Russo",
-    "items": ["Matoke"],
+    "items": [
+      "Matoke"
+    ],
     "totalPrice": 669,
     "status": "Completed",
     "timestamp": "2022-03-24T13:50:50.000Z"
@@ -226,7 +273,9 @@
   {
     "orderId": "ORD-4348556",
     "customerName": "Wood Flowers",
-    "items": ["Harira Soup"],
+    "items": [
+      "Harira Soup"
+    ],
     "totalPrice": 234,
     "status": "Pending",
     "timestamp": "2024-03-03T23:17:32.000Z"
@@ -234,7 +283,9 @@
   {
     "orderId": "ORD-9217771",
     "customerName": "Saundra Harding",
-    "items": ["Mopane Worms"],
+    "items": [
+      "Mopane Worms"
+    ],
     "totalPrice": 981,
     "status": "Completed",
     "timestamp": "2024-09-22T20:43:45.000Z"
@@ -242,7 +293,10 @@
   {
     "orderId": "ORD-1366081",
     "customerName": "Castillo Bishop",
-    "items": ["Peri-Peri Chicken", "Malewa"],
+    "items": [
+      "Peri-Peri Chicken",
+      "Malewa"
+    ],
     "totalPrice": 831,
     "status": "Pending",
     "timestamp": "2025-10-20T01:43:56.000Z"
@@ -250,7 +304,10 @@
   {
     "orderId": "ORD-3388447",
     "customerName": "Workman Burris",
-    "items": ["Kelewele", "Kanda"],
+    "items": [
+      "Kelewele",
+      "Kanda"
+    ],
     "totalPrice": 463,
     "status": "Pending",
     "timestamp": "2020-02-12T18:48:38.000Z"
@@ -258,7 +315,9 @@
   {
     "orderId": "ORD-8728517",
     "customerName": "Tami Dodson",
-    "items": ["Mechoui"],
+    "items": [
+      "Mechoui"
+    ],
     "totalPrice": 553,
     "status": "Pending",
     "timestamp": "2022-02-13T04:45:38.000Z"
@@ -266,7 +325,9 @@
   {
     "orderId": "ORD-9325055",
     "customerName": "Vicki Drake",
-    "items": ["Bastilla"],
+    "items": [
+      "Bastilla"
+    ],
     "totalPrice": 925,
     "status": "Pending",
     "timestamp": "2024-07-20T17:13:39.000Z"
@@ -274,7 +335,9 @@
   {
     "orderId": "ORD-988687",
     "customerName": "Terri Dunn",
-    "items": ["Ugali & Fried Fish"],
+    "items": [
+      "Ugali & Fried Fish"
+    ],
     "totalPrice": 17,
     "status": "Completed",
     "timestamp": "2024-06-10T06:19:37.000Z"
@@ -282,7 +345,10 @@
   {
     "orderId": "ORD-4496854",
     "customerName": "Woodard Nelson",
-    "items": ["Zanzibar Biryani", "Mahjouba"],
+    "items": [
+      "Zanzibar Biryani",
+      "Mahjouba"
+    ],
     "totalPrice": 402,
     "status": "Pending",
     "timestamp": "2022-07-09T13:19:07.000Z"
@@ -290,7 +356,9 @@
   {
     "orderId": "ORD-7523273",
     "customerName": "Tanya Benjamin",
-    "items": ["Shakshuka"],
+    "items": [
+      "Shakshuka"
+    ],
     "totalPrice": 312,
     "status": "Completed",
     "timestamp": "2020-08-15T20:00:14.000Z"
@@ -298,7 +366,9 @@
   {
     "orderId": "ORD-5870496",
     "customerName": "Burris Guthrie",
-    "items": ["Pap & Chakalaka"],
+    "items": [
+      "Pap & Chakalaka"
+    ],
     "totalPrice": 721,
     "status": "Pending",
     "timestamp": "2021-09-16T23:30:41.000Z"
@@ -306,7 +376,9 @@
   {
     "orderId": "ORD-3039937",
     "customerName": "Rosemarie Mcconnell",
-    "items": ["Thieboudienne"],
+    "items": [
+      "Thieboudienne"
+    ],
     "totalPrice": 930,
     "status": "Completed",
     "timestamp": "2021-12-15T09:38:16.000Z"
@@ -314,7 +386,10 @@
   {
     "orderId": "ORD-3361338",
     "customerName": "Hebert Best",
-    "items": ["Nyama Choma", "Bissap Juice"],
+    "items": [
+      "Nyama Choma",
+      "Bissap Juice"
+    ],
     "totalPrice": 720,
     "status": "Pending",
     "timestamp": "2022-02-21T19:51:22.000Z"
@@ -322,7 +397,10 @@
   {
     "orderId": "ORD-1703162",
     "customerName": "Ina Tucker",
-    "items": ["Bastilla", "Boerewors"],
+    "items": [
+      "Bastilla",
+      "Boerewors"
+    ],
     "totalPrice": 364,
     "status": "Pending",
     "timestamp": "2022-08-11T03:15:20.000Z"
@@ -330,7 +408,10 @@
   {
     "orderId": "ORD-1098533",
     "customerName": "Cathryn Burgess",
-    "items": ["Jollof Rice", "Nyama Choma"],
+    "items": [
+      "Jollof Rice",
+      "Nyama Choma"
+    ],
     "totalPrice": 774,
     "status": "Completed",
     "timestamp": "2020-05-25T01:08:46.000Z"
@@ -338,7 +419,9 @@
   {
     "orderId": "ORD-5798189",
     "customerName": "Brigitte Barnett",
-    "items": ["Bobotie"],
+    "items": [
+      "Bobotie"
+    ],
     "totalPrice": 826,
     "status": "Completed",
     "timestamp": "2023-05-01T06:33:08.000Z"
@@ -346,7 +429,9 @@
   {
     "orderId": "ORD-7888401",
     "customerName": "Schultz Mercado",
-    "items": ["Bobotie"],
+    "items": [
+      "Bobotie"
+    ],
     "totalPrice": 935,
     "status": "Pending",
     "timestamp": "2025-10-14T04:13:03.000Z"
@@ -354,7 +439,10 @@
   {
     "orderId": "ORD-1997445",
     "customerName": "Farley Gomez",
-    "items": ["Poulet DG", "Couscous & Tagine"],
+    "items": [
+      "Poulet DG",
+      "Couscous & Tagine"
+    ],
     "totalPrice": 439,
     "status": "Pending",
     "timestamp": "2023-03-06T15:55:42.000Z"
@@ -362,7 +450,10 @@
   {
     "orderId": "ORD-5524950",
     "customerName": "Bonner Wise",
-    "items": ["Kelewele", "Fumbwa"],
+    "items": [
+      "Kelewele",
+      "Fumbwa"
+    ],
     "totalPrice": 63,
     "status": "Pending",
     "timestamp": "2020-08-14T04:17:47.000Z"
@@ -370,7 +461,10 @@
   {
     "orderId": "ORD-8167840",
     "customerName": "Griffith Donovan",
-    "items": ["Mopane Worms", "Kitoza"],
+    "items": [
+      "Mopane Worms",
+      "Kitoza"
+    ],
     "totalPrice": 597,
     "status": "Pending",
     "timestamp": "2021-03-15T15:07:03.000Z"
@@ -378,7 +472,10 @@
   {
     "orderId": "ORD-1905339",
     "customerName": "Macdonald Mcfadden",
-    "items": ["Mahjouba", "Pap & Chakalaka"],
+    "items": [
+      "Mahjouba",
+      "Pap & Chakalaka"
+    ],
     "totalPrice": 370,
     "status": "Pending",
     "timestamp": "2020-03-12T08:00:29.000Z"
@@ -386,7 +483,10 @@
   {
     "orderId": "ORD-1181202",
     "customerName": "Blake Valenzuela",
-    "items": ["Seswaa", "Harira Soup"],
+    "items": [
+      "Seswaa",
+      "Harira Soup"
+    ],
     "totalPrice": 104,
     "status": "Completed",
     "timestamp": "2023-09-04T02:38:51.000Z"
@@ -394,7 +494,10 @@
   {
     "orderId": "ORD-1662580",
     "customerName": "Joyce Duncan",
-    "items": ["Pounded Yam & Egusi Soup", "Pilau Rice"],
+    "items": [
+      "Pounded Yam & Egusi Soup",
+      "Pilau Rice"
+    ],
     "totalPrice": 958,
     "status": "Pending",
     "timestamp": "2024-09-03T22:25:57.000Z"
@@ -402,7 +505,10 @@
   {
     "orderId": "ORD-2043565",
     "customerName": "Daisy Hyde",
-    "items": ["Fufu & Light Soup", "Harira Soup"],
+    "items": [
+      "Fufu & Light Soup",
+      "Harira Soup"
+    ],
     "totalPrice": 384,
     "status": "Pending",
     "timestamp": "2020-11-28T15:50:55.000Z"
@@ -410,7 +516,10 @@
   {
     "orderId": "ORD-4402064",
     "customerName": "Bessie Mcdaniel",
-    "items": ["Suya", "Jollof Rice"],
+    "items": [
+      "Suya",
+      "Jollof Rice"
+    ],
     "totalPrice": 909,
     "status": "Pending",
     "timestamp": "2022-04-28T11:05:41.000Z"
@@ -418,7 +527,9 @@
   {
     "orderId": "ORD-2311874",
     "customerName": "Carol Monroe",
-    "items": ["Bastilla"],
+    "items": [
+      "Bastilla"
+    ],
     "totalPrice": 761,
     "status": "Pending",
     "timestamp": "2025-03-07T09:54:06.000Z"
@@ -426,7 +537,10 @@
   {
     "orderId": "ORD-8760706",
     "customerName": "Laurie Middleton",
-    "items": ["Suya", "Matoke"],
+    "items": [
+      "Suya",
+      "Matoke"
+    ],
     "totalPrice": 868,
     "status": "Pending",
     "timestamp": "2020-01-05T07:28:18.000Z"
@@ -434,7 +548,9 @@
   {
     "orderId": "ORD-3017691",
     "customerName": "Kramer Noel",
-    "items": ["Jollof Rice"],
+    "items": [
+      "Jollof Rice"
+    ],
     "totalPrice": 490,
     "status": "Pending",
     "timestamp": "2025-02-12T00:50:52.000Z"
@@ -442,7 +558,9 @@
   {
     "orderId": "ORD-6139911",
     "customerName": "Nguyen Salas",
-    "items": ["Ndolé"],
+    "items": [
+      "Ndolé"
+    ],
     "totalPrice": 132,
     "status": "Pending",
     "timestamp": "2022-04-03T22:40:32.000Z"
@@ -450,7 +568,9 @@
   {
     "orderId": "ORD-2272370",
     "customerName": "Cindy Hansen",
-    "items": ["Pilau Rice"],
+    "items": [
+      "Pilau Rice"
+    ],
     "totalPrice": 815,
     "status": "Completed",
     "timestamp": "2023-01-03T05:45:31.000Z"
@@ -458,7 +578,10 @@
   {
     "orderId": "ORD-7875778",
     "customerName": "Matilda Benton",
-    "items": ["Fufu & Light Soup", "Bobotie"],
+    "items": [
+      "Fufu & Light Soup",
+      "Bobotie"
+    ],
     "totalPrice": 169,
     "status": "Completed",
     "timestamp": "2023-05-11T18:18:34.000Z"
@@ -466,7 +589,9 @@
   {
     "orderId": "ORD-7465871",
     "customerName": "Jennings Campbell",
-    "items": ["Mopane Worms"],
+    "items": [
+      "Mopane Worms"
+    ],
     "totalPrice": 65,
     "status": "Pending",
     "timestamp": "2021-12-15T13:54:27.000Z"
@@ -474,7 +599,10 @@
   {
     "orderId": "ORD-9453836",
     "customerName": "Felicia Bowen",
-    "items": ["Bissap Juice", "Koshari"],
+    "items": [
+      "Bissap Juice",
+      "Koshari"
+    ],
     "totalPrice": 142,
     "status": "Pending",
     "timestamp": "2022-06-21T16:37:48.000Z"
@@ -482,7 +610,10 @@
   {
     "orderId": "ORD-9031212",
     "customerName": "Davidson Elliott",
-    "items": ["Saka Saka", "Bissap Juice"],
+    "items": [
+      "Saka Saka",
+      "Bissap Juice"
+    ],
     "totalPrice": 608,
     "status": "Pending",
     "timestamp": "2025-05-09T15:15:58.000Z"
@@ -490,7 +621,9 @@
   {
     "orderId": "ORD-4039036",
     "customerName": "Wolfe Fischer",
-    "items": ["Chikwangue"],
+    "items": [
+      "Chikwangue"
+    ],
     "totalPrice": 772,
     "status": "Completed",
     "timestamp": "2025-09-20T08:19:08.000Z"
@@ -498,7 +631,10 @@
   {
     "orderId": "ORD-6544362",
     "customerName": "Booker Walters",
-    "items": ["Brik", "Kanda"],
+    "items": [
+      "Brik",
+      "Kanda"
+    ],
     "totalPrice": 553,
     "status": "Pending",
     "timestamp": "2023-04-09T16:48:41.000Z"
@@ -506,7 +642,10 @@
   {
     "orderId": "ORD-4045098",
     "customerName": "Leila Kelly",
-    "items": ["Zanzibar Biryani", "Harira Soup"],
+    "items": [
+      "Zanzibar Biryani",
+      "Harira Soup"
+    ],
     "totalPrice": 76,
     "status": "Pending",
     "timestamp": "2023-06-27T19:34:48.000Z"
@@ -514,7 +653,9 @@
   {
     "orderId": "ORD-306002",
     "customerName": "Juliet Bullock",
-    "items": ["Matoke"],
+    "items": [
+      "Matoke"
+    ],
     "totalPrice": 50,
     "status": "Completed",
     "timestamp": "2023-04-01T01:27:03.000Z"
@@ -522,7 +663,9 @@
   {
     "orderId": "ORD-6270328",
     "customerName": "Hallie Warner",
-    "items": ["Kitoza"],
+    "items": [
+      "Kitoza"
+    ],
     "totalPrice": 565,
     "status": "Pending",
     "timestamp": "2022-02-24T00:08:52.000Z"
@@ -530,7 +673,9 @@
   {
     "orderId": "ORD-1997495",
     "customerName": "Latoya Hayes",
-    "items": ["Bissap Juice"],
+    "items": [
+      "Bissap Juice"
+    ],
     "totalPrice": 306,
     "status": "Completed",
     "timestamp": "2021-06-05T07:54:33.000Z"
@@ -538,7 +683,10 @@
   {
     "orderId": "ORD-4138464",
     "customerName": "Samantha Pittman",
-    "items": ["Malewa", "Sadza & Nyama"],
+    "items": [
+      "Malewa",
+      "Sadza & Nyama"
+    ],
     "totalPrice": 739,
     "status": "Pending",
     "timestamp": "2024-03-05T12:08:25.000Z"
@@ -546,7 +694,10 @@
   {
     "orderId": "ORD-4516305",
     "customerName": "Mccullough Burt",
-    "items": ["Brik", "Couscous & Tagine"],
+    "items": [
+      "Brik",
+      "Couscous & Tagine"
+    ],
     "totalPrice": 41,
     "status": "Completed",
     "timestamp": "2020-09-14T16:57:40.000Z"
@@ -554,7 +705,10 @@
   {
     "orderId": "ORD-3537965",
     "customerName": "Chavez Mcgowan",
-    "items": ["Pilau Rice", "Kelewele"],
+    "items": [
+      "Pilau Rice",
+      "Kelewele"
+    ],
     "totalPrice": 701,
     "status": "Pending",
     "timestamp": "2024-01-12T09:21:28.000Z"
@@ -562,7 +716,9 @@
   {
     "orderId": "ORD-7533897",
     "customerName": "Mae Sosa",
-    "items": ["Bastilla"],
+    "items": [
+      "Bastilla"
+    ],
     "totalPrice": 951,
     "status": "Pending",
     "timestamp": "2025-09-08T11:55:30.000Z"
@@ -570,7 +726,9 @@
   {
     "orderId": "ORD-8121057",
     "customerName": "Leann Brennan",
-    "items": ["Zanzibar Biryani"],
+    "items": [
+      "Zanzibar Biryani"
+    ],
     "totalPrice": 398,
     "status": "Pending",
     "timestamp": "2020-05-05T07:18:47.000Z"
@@ -578,7 +736,9 @@
   {
     "orderId": "ORD-1231271",
     "customerName": "Kelly Church",
-    "items": ["Bastilla"],
+    "items": [
+      "Bastilla"
+    ],
     "totalPrice": 397,
     "status": "Completed",
     "timestamp": "2025-09-12T23:24:06.000Z"
@@ -586,7 +746,9 @@
   {
     "orderId": "ORD-8087651",
     "customerName": "Brandy Melton",
-    "items": ["Koshari"],
+    "items": [
+      "Koshari"
+    ],
     "totalPrice": 463,
     "status": "Pending",
     "timestamp": "2025-12-03T01:31:43.000Z"
@@ -594,7 +756,10 @@
   {
     "orderId": "ORD-5710548",
     "customerName": "Darlene Hood",
-    "items": ["Couscous & Tagine", "Kitoza"],
+    "items": [
+      "Couscous & Tagine",
+      "Kitoza"
+    ],
     "totalPrice": 160,
     "status": "Completed",
     "timestamp": "2020-05-25T17:32:05.000Z"
@@ -602,7 +767,9 @@
   {
     "orderId": "ORD-7290324",
     "customerName": "York Gilbert",
-    "items": ["Harira Soup"],
+    "items": [
+      "Harira Soup"
+    ],
     "totalPrice": 645,
     "status": "Completed",
     "timestamp": "2020-08-17T02:13:01.000Z"
@@ -610,7 +777,9 @@
   {
     "orderId": "ORD-9270881",
     "customerName": "Berta Morin",
-    "items": ["Koshari"],
+    "items": [
+      "Koshari"
+    ],
     "totalPrice": 494,
     "status": "Pending",
     "timestamp": "2025-07-25T01:58:47.000Z"
@@ -618,7 +787,9 @@
   {
     "orderId": "ORD-535973",
     "customerName": "Patrick Waters",
-    "items": ["Kelewele"],
+    "items": [
+      "Kelewele"
+    ],
     "totalPrice": 959,
     "status": "Completed",
     "timestamp": "2021-10-15T14:34:47.000Z"
@@ -626,7 +797,10 @@
   {
     "orderId": "ORD-7405187",
     "customerName": "Staci Chandler",
-    "items": ["Ugali & Fried Fish", "Ugali & Fried Fish"],
+    "items": [
+      "Ugali & Fried Fish",
+      "Ugali & Fried Fish"
+    ],
     "totalPrice": 403,
     "status": "Completed",
     "timestamp": "2024-09-27T19:36:02.000Z"
@@ -634,7 +808,10 @@
   {
     "orderId": "ORD-4250003",
     "customerName": "Johanna Mayo",
-    "items": ["Maakouda", "Vetkoek"],
+    "items": [
+      "Maakouda",
+      "Vetkoek"
+    ],
     "totalPrice": 207,
     "status": "Pending",
     "timestamp": "2020-06-07T10:52:11.000Z"
@@ -642,7 +819,10 @@
   {
     "orderId": "ORD-6386885",
     "customerName": "Jimenez Meadows",
-    "items": ["Kachumbari", "Suya"],
+    "items": [
+      "Kachumbari",
+      "Suya"
+    ],
     "totalPrice": 92,
     "status": "Completed",
     "timestamp": "2023-04-28T05:45:12.000Z"
@@ -650,7 +830,9 @@
   {
     "orderId": "ORD-7356784",
     "customerName": "Blackwell Warren",
-    "items": ["Mahjouba"],
+    "items": [
+      "Mahjouba"
+    ],
     "totalPrice": 256,
     "status": "Pending",
     "timestamp": "2020-09-27T20:48:56.000Z"
@@ -658,7 +840,9 @@
   {
     "orderId": "ORD-1095616",
     "customerName": "Lelia Bell",
-    "items": ["Banga Soup & Starch"],
+    "items": [
+      "Banga Soup & Starch"
+    ],
     "totalPrice": 796,
     "status": "Completed",
     "timestamp": "2022-02-26T00:02:14.000Z"
@@ -666,7 +850,10 @@
   {
     "orderId": "ORD-7089314",
     "customerName": "Kristina Fowler",
-    "items": ["Maakouda", "Akara"],
+    "items": [
+      "Maakouda",
+      "Akara"
+    ],
     "totalPrice": 767,
     "status": "Completed",
     "timestamp": "2023-03-04T20:29:32.000Z"
@@ -674,7 +861,10 @@
   {
     "orderId": "ORD-9616050",
     "customerName": "Barlow Savage",
-    "items": ["Koshari", "Banga Soup & Starch"],
+    "items": [
+      "Koshari",
+      "Banga Soup & Starch"
+    ],
     "totalPrice": 520,
     "status": "Pending",
     "timestamp": "2024-07-02T02:54:01.000Z"
@@ -682,7 +872,10 @@
   {
     "orderId": "ORD-3598140",
     "customerName": "Reese Rowe",
-    "items": ["Ful Medames", "Banga Soup & Starch"],
+    "items": [
+      "Ful Medames",
+      "Banga Soup & Starch"
+    ],
     "totalPrice": 324,
     "status": "Completed",
     "timestamp": "2022-05-05T23:25:06.000Z"
@@ -690,7 +883,10 @@
   {
     "orderId": "ORD-3710536",
     "customerName": "Katheryn Vasquez",
-    "items": ["Zanzibar Biryani", "Kachumbari"],
+    "items": [
+      "Zanzibar Biryani",
+      "Kachumbari"
+    ],
     "totalPrice": 676,
     "status": "Completed",
     "timestamp": "2022-03-08T02:21:20.000Z"
@@ -698,7 +894,10 @@
   {
     "orderId": "ORD-1358218",
     "customerName": "Gilliam Castaneda",
-    "items": ["Kachumbari", "Ndolé"],
+    "items": [
+      "Kachumbari",
+      "Ndolé"
+    ],
     "totalPrice": 440,
     "status": "Pending",
     "timestamp": "2024-11-06T21:05:53.000Z"
@@ -706,7 +905,9 @@
   {
     "orderId": "ORD-9059833",
     "customerName": "Roxie Hughes",
-    "items": ["Bunny Chow"],
+    "items": [
+      "Bunny Chow"
+    ],
     "totalPrice": 692,
     "status": "Completed",
     "timestamp": "2023-12-19T08:29:44.000Z"
@@ -714,7 +915,9 @@
   {
     "orderId": "ORD-8356209",
     "customerName": "Pollard Griffin",
-    "items": ["Akara"],
+    "items": [
+      "Akara"
+    ],
     "totalPrice": 561,
     "status": "Pending",
     "timestamp": "2020-03-16T12:54:14.000Z"
@@ -722,7 +925,10 @@
   {
     "orderId": "ORD-3259687",
     "customerName": "Angelita Floyd",
-    "items": ["Fumbwa", "Ndolé"],
+    "items": [
+      "Fumbwa",
+      "Ndolé"
+    ],
     "totalPrice": 535,
     "status": "Pending",
     "timestamp": "2021-12-10T00:12:15.000Z"
@@ -730,23 +936,20 @@
   {
     "orderId": "ORD-4083218",
     "customerName": "Audra Lester",
-    "items": ["Seswaa"],
+    "items": [
+      "Seswaa"
+    ],
     "totalPrice": 728,
     "status": "Pending",
     "timestamp": "2022-06-07T13:24:12.000Z"
   },
   {
-    "orderId": "ORD-7686124",
-    "customerName": "Simmons Tanner",
-    "items": ["Peri-Peri Chicken"],
-    "totalPrice": 137,
-    "status": "Pending",
-    "timestamp": "2022-10-05T12:21:43.000Z"
-  },
-  {
     "orderId": "ORD-555538",
     "customerName": "Matthews Watts",
-    "items": ["Kanda", "Ndolé"],
+    "items": [
+      "Kanda",
+      "Ndolé"
+    ],
     "totalPrice": 300,
     "status": "Completed",
     "timestamp": "2023-04-28T09:23:35.000Z"
@@ -754,7 +957,10 @@
   {
     "orderId": "ORD-7457297",
     "customerName": "Garza Miranda",
-    "items": ["Ugali & Fried Fish", "Bissap Juice"],
+    "items": [
+      "Ugali & Fried Fish",
+      "Bissap Juice"
+    ],
     "totalPrice": 469,
     "status": "Completed",
     "timestamp": "2022-12-07T17:15:14.000Z"
@@ -762,7 +968,9 @@
   {
     "orderId": "ORD-1838991",
     "customerName": "Tamera Lowe",
-    "items": ["Chapati & Sukuma Wiki"],
+    "items": [
+      "Chapati & Sukuma Wiki"
+    ],
     "totalPrice": 531,
     "status": "Completed",
     "timestamp": "2022-08-14T04:52:13.000Z"
@@ -770,7 +978,9 @@
   {
     "orderId": "ORD-9909547",
     "customerName": "Bethany Hodge",
-    "items": ["Mechoui"],
+    "items": [
+      "Mechoui"
+    ],
     "totalPrice": 213,
     "status": "Pending",
     "timestamp": "2021-06-09T08:59:04.000Z"
@@ -778,7 +988,10 @@
   {
     "orderId": "ORD-6819114",
     "customerName": "Leanne Bennett",
-    "items": ["Zanzibar Biryani", "Seswaa"],
+    "items": [
+      "Zanzibar Biryani",
+      "Seswaa"
+    ],
     "totalPrice": 423,
     "status": "Pending",
     "timestamp": "2023-11-18T21:47:33.000Z"
@@ -786,7 +999,10 @@
   {
     "orderId": "ORD-8914187",
     "customerName": "Shepherd Erickson",
-    "items": ["Mahjouba", "Mopane Worms"],
+    "items": [
+      "Mahjouba",
+      "Mopane Worms"
+    ],
     "totalPrice": 531,
     "status": "Pending",
     "timestamp": "2020-04-08T06:15:57.000Z"
@@ -794,7 +1010,10 @@
   {
     "orderId": "ORD-4811569",
     "customerName": "Valerie Lambert",
-    "items": ["Mandazi", "Pounded Yam & Egusi Soup"],
+    "items": [
+      "Mandazi",
+      "Pounded Yam & Egusi Soup"
+    ],
     "totalPrice": 737,
     "status": "Pending",
     "timestamp": "2025-07-28T15:27:31.000Z"
