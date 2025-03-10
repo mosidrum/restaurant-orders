@@ -21,21 +21,23 @@ export const OrderTable: React.FC<OrderTableProps> = ({
 
   const { orders, loading } = useOrders();
 
+  // Filter Orders based on status
   const filteredOrders = useMemo(() => {
     return selectedStatus === "All"
       ? orders
       : orders.filter((order) => order.status === selectedStatus);
   }, [orders, selectedStatus]);
 
+  // Sort Orders based on selected sort option
   const sortedOrders = useMemo(() => {
     return [...filteredOrders].sort((a, b) => {
       if (selectedSort === "totalPrice") {
-        return b.totalPrice - a.totalPrice;
+        return (b.totalPrice || 0) - (a.totalPrice || 0); // Ensure totalPrice is a number
       }
       if (selectedSort === "timestamp") {
         return (
           new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
-        );
+        ); // Ensure timestamp is parsed correctly
       }
       return 0;
     });
@@ -75,6 +77,7 @@ export const OrderTable: React.FC<OrderTableProps> = ({
       dataIndex: "totalPrice",
       key: "totalPrice",
       responsive: ["sm" as Breakpoint],
+      render: (price: number) => `$${price.toFixed(2)}`,
     },
     {
       title: "Status",
@@ -90,6 +93,7 @@ export const OrderTable: React.FC<OrderTableProps> = ({
       dataIndex: "timestamp",
       key: "timestamp",
       responsive: ["xl" as Breakpoint],
+      render: (timestamp: string) => new Date(timestamp).toLocaleString(), // Ensure readable date
     },
     {
       title: "Action",
@@ -124,7 +128,7 @@ export const OrderTable: React.FC<OrderTableProps> = ({
           className="border rounded px-3 py-1"
           value={selectedSort}
           onChange={(e) =>
-            setSelectedSort(e.target.value as "totalPrice" | "timestamp")
+            setSelectedSort(e.target.value as "totalPrice" | "timestamp" | "")
           }
         >
           <option value="">Sort By</option>
