@@ -1,12 +1,16 @@
 "use client";
 
-import React from "react";
-import { Table, Tag, Space } from "antd";
+import React, { useState } from "react";
+import { Table, Tag, Space, Select, Button } from "antd";
 import { Orders } from "@/types";
 import { DropDown } from "@/components/DropDown";
+import {
+  SortAscendingOutlined,
+  SortDescendingOutlined,
+} from "@ant-design/icons";
 
 export const TableData = () => {
-  const orders: Orders[] = [
+  const initialOrders: Orders[] = [
     {
       orderId: "ORD-001",
       customerName: "John Doe",
@@ -32,7 +36,56 @@ export const TableData = () => {
       timestamp: "2025-03-05 16:45:10",
     },
   ];
-  
+
+  const [orders, setOrders] = useState(initialOrders);
+  const [statusFilter, setStatusFilter] = useState<string | null>(null);
+  const [sortField, setSortField] = useState<string | null>(null);
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
+
+  const handleStatusFilter = (value: string) => {
+    setStatusFilter(value);
+    filterAndSortOrders(value, sortField, sortDirection);
+  };
+
+  const handleSort = (field: string) => {
+    const newDirection =
+      field === sortField && sortDirection === "asc" ? "desc" : "asc";
+    setSortField(field);
+    setSortDirection(newDirection);
+    filterAndSortOrders(statusFilter, field, newDirection);
+  };
+
+  const filterAndSortOrders = (
+    status: string | null,
+    field: string | null,
+    direction: "asc" | "desc"
+  ) => {
+    let filteredOrders = [...initialOrders];
+
+    if (status && status !== "All") {
+      filteredOrders = filteredOrders.filter(
+        (order) => order.status === status
+      );
+    }
+
+    if (field) {
+      filteredOrders.sort((a, b) => {
+        let comparison = 0;
+
+        if (field === "timestamp") {
+          comparison =
+            new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime();
+        } else if (field === "totalPrice") {
+          comparison = a.totalPrice - b.totalPrice;
+        }
+
+        return direction === "asc" ? comparison : -comparison;
+      });
+    }
+
+    setOrders(filteredOrders);
+  };
+
   const columns = [
     {
       title: "Order ID",
@@ -64,7 +117,23 @@ export const TableData = () => {
       ),
     },
     {
-      title: "Total Price",
+      title: (
+        <div className="flex items-center justify-between">
+          <span>Total Price</span>
+          <Button
+            type="text"
+            onClick={() => handleSort("totalPrice")}
+            icon={
+              sortField === "totalPrice" && sortDirection === "asc" ? (
+                <SortAscendingOutlined />
+              ) : (
+                <SortDescendingOutlined />
+              )
+            }
+            size="small"
+          />
+        </div>
+      ),
       dataIndex: "totalPrice",
       key: "totalPrice",
       render: (price: number) => `$${price.toFixed(2)}`,
@@ -78,7 +147,23 @@ export const TableData = () => {
       ),
     },
     {
-      title: "Order Timestamp",
+      title: (
+        <div className="flex items-center justify-between">
+          <span>Order Timestamp</span>
+          <Button
+            type="text"
+            onClick={() => handleSort("timestamp")}
+            icon={
+              sortField === "timestamp" && sortDirection === "asc" ? (
+                <SortAscendingOutlined />
+              ) : (
+                <SortDescendingOutlined />
+              )
+            }
+            size="small"
+          />
+        </div>
+      ),
       dataIndex: "timestamp",
       key: "timestamp",
       className: "hidden md:table-cell",
@@ -94,13 +179,25 @@ export const TableData = () => {
       ),
     },
   ];
-  
+
   return (
     <div className="flex flex-col items-center p-4">
-      <div className="w-full max-w-7xl flex justify-end mb-4">
+      <div className="w-full max-w-7xl flex justify-between mb-4">
+        <div>
+          <Select
+            placeholder="Filter by Status"
+            style={{ width: 150 }}
+            onChange={handleStatusFilter}
+            options={[
+              { value: "All", label: "All" },
+              { value: "Pending", label: "Pending" },
+              { value: "Completed", label: "Completed" },
+            ]}
+          />
+        </div>
         <DropDown />
       </div>
-      
+
       <div className="w-full max-w-7xl">
         <Table
           columns={columns}
