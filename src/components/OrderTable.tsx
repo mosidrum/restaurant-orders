@@ -1,4 +1,4 @@
-import { Table, Tag } from "antd";
+import { Breakpoint, Table, Tag } from "antd";
 import { Orders } from "@/types";
 import { OrderStatus } from "./OrderStatus";
 import { TableSkeleton } from "./TableSkeleton";
@@ -20,23 +20,19 @@ export const OrderTable: React.FC<OrderTableProps> = ({
   const [selectedStatus, setSelectedStatus] = useState("All");
   const [selectedSort, setSelectedSort] = useState("");
 
-  // Handle status filtering
   const handleStatusChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedStatus(event.target.value);
   };
 
-  // Handle sorting
   const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedSort(event.target.value);
   };
 
-  // Filter orders based on selected status
   const filteredOrders = ordersData.filter((order) => {
     if (selectedStatus === "All") return true;
     return order.status === selectedStatus;
   });
 
-  // Sort orders based on selected criteria
   const sortedOrders = [...filteredOrders].sort((a, b) => {
     if (selectedSort === "totalPrice") {
       return b.totalPrice - a.totalPrice;
@@ -62,6 +58,7 @@ export const OrderTable: React.FC<OrderTableProps> = ({
       title: "Items Ordered",
       dataIndex: "items",
       key: "items",
+      responsive: ["md" as Breakpoint],
       render: (items: string[]) => (
         <div className="flex flex-row gap-1">
           {items.map((item) => (
@@ -76,12 +73,14 @@ export const OrderTable: React.FC<OrderTableProps> = ({
       title: "Total Price",
       dataIndex: "totalPrice",
       key: "totalPrice",
+      responsive: ["sm" as Breakpoint],
       render: (price: number) => `$${price.toFixed(2)}`,
     },
     {
       title: "Status",
       dataIndex: "status",
       key: "status",
+      responsive: ["lg" as Breakpoint],
       render: (_: any, record: Orders) => (
         <OrderStatus order={record} onUpdateStatus={onUpdateStatus} />
       ),
@@ -90,6 +89,7 @@ export const OrderTable: React.FC<OrderTableProps> = ({
       title: "Order Timestamp",
       dataIndex: "timestamp",
       key: "timestamp",
+      responsive: ["xl" as Breakpoint],
     },
     {
       title: "Action",
@@ -108,10 +108,8 @@ export const OrderTable: React.FC<OrderTableProps> = ({
   ];
 
   return (
-    <div className="w-full max-w-7xl">
-      {/* Filter and Sort Controls */}
+    <div className="flex flex-col w-full max-w-7xl">
       <div className="flex justify-end gap-4 mb-4">
-        {/* Status Filter */}
         <select
           className="border rounded px-3 py-1"
           value={selectedStatus}
@@ -122,7 +120,6 @@ export const OrderTable: React.FC<OrderTableProps> = ({
           <option value="Completed">Completed</option>
         </select>
 
-        {/* Sorting */}
         <select
           className="border rounded px-3 py-1"
           value={selectedSort}
@@ -134,7 +131,6 @@ export const OrderTable: React.FC<OrderTableProps> = ({
         </select>
       </div>
 
-      {/* Table */}
       {loading ? (
         <TableSkeleton columns={columns} pageSize={pageSize} />
       ) : (

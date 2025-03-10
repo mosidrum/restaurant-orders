@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { fetchOrders } from "@/utils/fetchOrders";
 import { Orders } from "@/types";
 import { OrderTable } from "./OrderTable";
@@ -30,14 +30,19 @@ export const TableData = () => {
     );
   };
 
+  const memoizedProps = useMemo(
+    () => ({
+      ordersData,
+      loading,
+      pageSize,
+      onUpdateStatus: handleUpdateStatus,
+    }),
+    [ordersData, loading, pageSize]
+  );
+
   return (
     <div className="flex flex-col items-center p-4">
-      <OrderTable
-        ordersData={ordersData}
-        loading={loading}
-        pageSize={pageSize}
-        onUpdateStatus={handleUpdateStatus}
-      />
+      <OrderTable {...memoizedProps} />
       <PaginationControls
         current={page}
         total={totalOrders}
