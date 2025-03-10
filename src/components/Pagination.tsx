@@ -16,8 +16,8 @@ export const PaginationControls = ({
       <Pagination
         current={current}
         total={total}
-        pageSize={10} // Fixed at 10 per page
-        showSizeChanger={false} // Prevents user from changing page size
+        pageSize={10}
+        showSizeChanger={false}
         onChange={onPageChange}
       />
     </div>

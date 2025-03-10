@@ -1,23 +1,15 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
-import { fetchOrders } from "@/utils/fetchOrders";
-import { Orders } from "@/types";
+import React, { useState, useMemo } from "react";
 import { OrderTable } from "./OrderTable";
 import { PaginationControls } from "./Pagination";
+import { useOrders } from "@/hooks/useOrders";
 
 export const TableData = () => {
-  const [ordersData, setOrdersData] = useState<Orders[]>([]);
-  const [page, setPage] = useState(1);
-  const [pageSize] = useState(10);
-  const [totalOrders] = useState(100);
+  const [page, setPage] = useState<number>(1);
+  const pageSize = 10;
 
-  // useEffect(() => {
-  //   setLoading(true);
-  //   fetchOrders(page, pageSize)
-  //     .then((newOrders) => setOrdersData(newOrders))
-  //     .finally(() => setLoading(false));
-  // }, [page, pageSize]);
+  const { orders, loading, totalOrders } = useOrders(page, pageSize);
 
   const handleUpdateStatus = (orderId: string) => {
     setOrdersData((prevOrders) =>
@@ -31,11 +23,12 @@ export const TableData = () => {
 
   const memoizedProps = useMemo(
     () => ({
-      ordersData,
+      ordersData: orders,
       pageSize,
       onUpdateStatus: handleUpdateStatus,
+      loading,
     }),
-    [ordersData, pageSize]
+    [orders, pageSize, loading]
   );
 
   return (

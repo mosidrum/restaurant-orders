@@ -1,55 +1,70 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { WebSocketServer } from "ws";
+import { WebSocketServer, WebSocket } from "ws";
 import fs from "fs";
 import path from "path";
 
 const wss = new WebSocketServer({ noServer: true });
 
-const getOrders = () => {
+interface Order {
+  orderId: string;
+  status: string;
+}
+
+const getOrders = (): Order[] => {
   const filePath = path.resolve("./public/mockOrders.json");
   const data = fs.readFileSync(filePath, "utf-8");
   return JSON.parse(data);
 };
 
-wss.on("connection", (ws) => {
+const getPaginatedOrders = (
+  page: number = 1,
+  pageSize: number = 10
+): Order[] => {
+  const allOrders = getOrders();
+  const startIndex = (page - 1) * pageSize;
+  const endIndex = startIndex + pageSize;
+  return allOrders.slice(startIndex, endIndex);
+};
+
+wss.on("connection", (socket: WebSocket) => {
   console.log("Client connected");
 
-  ws.send(JSON.stringify(getOrders()));
+  socket.on("message", (message: string) => {
+    try {
+      const parsedMessage = JSON.parse(message);
 
-  ws.on("message", (message) => {
-    const { orderId, status } = JSON.parse(message.toString());
+      if (parsedMessage.orderId && parsedMessage.status) {
+        const { orderId, status } = parsedMessage;
+        const orders = getOrders();
+        const orderIndex = orders.findIndex((o) => o.orderId === orderId);
 
-    const orders = getOrders();
+        if (orderIndex !== -1) {
+          orders[orderIndex].status = status;
+          fs.writeFileSync(
+            path.resolve("./public/mockOrders.json"),
+            JSON.stringify(orders, null, 2)
+          );
 
-    const orderIndex = orders.findIndex((o: any) => o.orderId === orderId);
-    if (orderIndex !== -1) {
-      orders[orderIndex].status = status;
-
-      fs.writeFileSync(
-        path.resolve("./public/mockOrders.json"),
-        JSON.stringify(orders, null, 2)
-      );
-
-      wss.clients.forEach((client) => {
-        if (client.readyState === 1) {
-          client.send(JSON.stringify(orders));
+          const updatedOrders = getPaginatedOrders(1, 10);
+          wss.clients.forEach((client) => {
+            if (client.readyState === WebSocket.OPEN) {
+              client.send(JSON.stringify(updatedOrders));
+            }
+          });
         }
-      });
+      } else if (parsedMessage.page !== undefined) {
+        const { page, pageSize = 10 } = parsedMessage;
+        const paginatedOrders = getPaginatedOrders(page, pageSize);
+        socket.send(JSON.stringify(paginatedOrders));
+      }
+    } catch (error) {
+      console.error("Error processing message:", error);
     }
   });
 
-  ws.on("close", () => console.log("Client disconnected"));
+  socket.on("close", () => {
+    console.log("Client disconnected");
+  });
 });
 
-export default function handler(req: any, res: any) {
-  if (!res.socket?.server?.wss) {
-    res.socket.server.wss = wss;
-    res.socket.server.on("upgrade", (request: any, socket: any, head: any) => {
-      wss.handleUpgrade(request, socket, head, (ws) => {
-        wss.emit("connection", ws, request);
-      });
-    });
-  }
-
-  res.end();
-}
+export default wss;

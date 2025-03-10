@@ -3,41 +3,42 @@ import { Orders } from "@/types";
 import { OrderStatus } from "./OrderStatus";
 import { TableSkeleton } from "./TableSkeleton";
 import { useState, useMemo } from "react";
-import { useOrders } from "@/hooks/useOrders";
 
 interface OrderTableProps {
+  ordersData: Orders[];
   pageSize: number;
   onUpdateStatus: (orderId: string) => void;
+  loading: boolean;
 }
 
 export const OrderTable: React.FC<OrderTableProps> = ({
+  ordersData,
   pageSize,
   onUpdateStatus,
+  loading,
 }) => {
   const [selectedStatus, setSelectedStatus] = useState("All");
   const [selectedSort, setSelectedSort] = useState<
     "totalPrice" | "timestamp" | ""
   >("");
 
-  const { orders, loading } = useOrders();
-
   // Filter Orders based on status
   const filteredOrders = useMemo(() => {
     return selectedStatus === "All"
-      ? orders
-      : orders.filter((order) => order.status === selectedStatus);
-  }, [orders, selectedStatus]);
+      ? ordersData
+      : ordersData.filter((order) => order.status === selectedStatus);
+  }, [ordersData, selectedStatus]);
 
   // Sort Orders based on selected sort option
   const sortedOrders = useMemo(() => {
     return [...filteredOrders].sort((a, b) => {
       if (selectedSort === "totalPrice") {
-        return (b.totalPrice || 0) - (a.totalPrice || 0); // Ensure totalPrice is a number
+        return (b.totalPrice || 0) - (a.totalPrice || 0);
       }
       if (selectedSort === "timestamp") {
         return (
           new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
-        ); // Ensure timestamp is parsed correctly
+        );
       }
       return 0;
     });
@@ -93,7 +94,7 @@ export const OrderTable: React.FC<OrderTableProps> = ({
       dataIndex: "timestamp",
       key: "timestamp",
       responsive: ["xl" as Breakpoint],
-      render: (timestamp: string) => new Date(timestamp).toLocaleString(), // Ensure readable date
+      render: (timestamp: string) => new Date(timestamp).toLocaleString(),
     },
     {
       title: "Action",
